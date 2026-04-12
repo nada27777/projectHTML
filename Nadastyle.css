@@ -30,20 +30,7 @@ body {
     -webkit-backdrop-filter: blur(8px);
     z-index: 1; 
 }
-@media (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-    .hero-section {
-        padding: 40px 20px;
-    }
-    .navbar {
-    flex-direction: column;
-    justify-content: center;
-    max-height: 300px;
-    padding: 8px 20px;
-  }
-}
+
 .navbar {
     position: fixed; 
     top: 20px;
@@ -97,15 +84,7 @@ body {
     width: 70%;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; 
-        text-align: center;
-    }
-    nav ul li {
-        margin: 10px 0;
-    }
-}
+
 
 .text-hello {
     position: absolute;
@@ -163,18 +142,6 @@ h1 {
 
 .course-col:hover {
     transform: translateY(-5px);
-}
-@media (max-width: 768px) {
-    .courses-container, .features-container, .branches-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .course-card, .feature-card, .branch-card {
-        width: 90%; 
-        margin-bottom: 20px;
-    }
 }
 
 /* Facilities Styling */
@@ -338,12 +305,6 @@ h1 {
     background: #e77d3b;
 }
 
-/* جعل التصميم متجاوب للموبايل */
-@media(max-width: 700px) {
-    .cta h1 {
-        font-size: 24px;
-    }
-}
 
 .footer {
     width: 100%;
@@ -374,4 +335,69 @@ h1 {
 .footer p {
     color: #777;
     font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    /* 1. إصلاح الـ Navbar لتناسب الموبايل */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 20px;
+        top: 10px;
+        width: 95%;
+    }
+    
+    .navbar ul {
+        margin-top: 10px;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar ul li a {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
+
+    /* 2. تحويل الصفوف إلى أعمدة (الأهم) */
+    .row {
+        flex-direction: column;
+    }
+
+    /* 3. جعل الكروت تأخذ العرض الكامل */
+    .course-col, .facilities-col, .campus-col, .testimonial-col {
+        flex-basis: 100%;
+        width: 100% !important; /* لضمان تخطي أي عرض قديم */
+        margin-bottom: 25px;
+    }
+
+    /* 4. ضبط حجم الأقسام والصور */
+    .courses, .facilities, .campus, .testimonials {
+        width: 90%;
+        padding-top: 50px;
+    }
+
+    .campus-col img {
+        height: 250px; /* تقليل طول الصور في الموبايل */
+    }
+
+    .testimonial-col {
+        flex-direction: column; /* جعل صورة الطالب فوق النص */
+        text-align: center;
+    }
+
+    .testimonial-col img {
+        margin: 0 auto 15px;
+    }
+
+    /* 5. ضبط نصوص الهيرو */
+    .text-hello h1 {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+    
+    .text-hello p {
+        font-size: 16px;
+    }
 }
