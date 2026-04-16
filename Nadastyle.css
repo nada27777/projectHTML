@@ -25,7 +25,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(232, 224, 224, 0.3); 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 1; 
@@ -51,7 +51,9 @@ body {
 }
 
 .navbar .logo img {
-    height: 45px;
+    height: 80px;
+        width: auto;
+
 }
 
 .navbar ul {
@@ -62,10 +64,13 @@ body {
 
 .navbar ul li a {
     text-decoration: none;
-    color: #e77d3b; 
+    color: #f39110; 
     padding: 10px 15px;
     font-weight: 500;
+    font-size: larger;
     position: relative;
+    transition: 0.4s;
+    
 }
 
 .navbar ul li a::after {
@@ -332,11 +337,90 @@ h1 {
 }
 
 .icons .fa:hover {
-    color: #fff;
+    color: #926ae7;
     transform: scale(1.2);
 }
 
 .footer p {
     color: #777;
     font-size: 14px;
+}
+
+
+/* --- إضافات الـ Responsive --- */
+
+@media(max-width: 900px) {
+    
+    .course-col, .facilities-col, .campus-col {
+        flex-basis: 48%; 
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 700px) {
+   
+    .navbar {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        margin-top: 10px;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    
+    .course-col, .facilities-col, .campus-col, .testimonial-col {
+        flex-basis: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+   
+    .text-hello h1 {
+        font-size: 35px;
+    }
+    
+    .text-hello p {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .header-section {
+        height: 50vh; /* تقليل ارتفاع الهيدر في الموبايل */
+    }
+}
+
+
+.testimonial-col {
+    display: flex;
+    align-items: flex-start; 
+}
+
+@media(max-width: 480px) {
+    .testimonial-col {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .testimonial-col img {
+        margin: 0 auto 15px;
+    }
+    
+    .testimonial-col h3 {
+        text-align: center;
+    }
 }
